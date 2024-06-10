@@ -13,7 +13,7 @@ def get_weather(api_key, city):
 
 @app.route('/')
 def index():
-    return app.send_static_file('index.html')
+    return render_template('index.html')
 
 @app.route('/weather')
 def fetch_weather():
