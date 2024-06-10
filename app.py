@@ -22,5 +22,19 @@ def get_weather():
     else:
         return jsonify({'error': 'Failed to fetch weather data'}), response.status_code
 
+def main():
+    api_key = 'YOUR_API_KEY_HERE'  # Replace with your OpenWeatherMap API key
+    city = input("Enter city name: ")
+    weather_data = get_weather(api_key, city)
+    if weather_data:
+        print(f"Weather in {city}:")
+        print(f"Temperature: {weather_data['main']['temp']}°C")
+        print(f"Description: {weather_data['weather'][0]['description']}")
+        print(f"Humidity: {weather_data['main']['humidity']}%")
+        print(f"Wind Speed: {weather_data['wind']['speed']} m/s")
+    else:
+        print("Failed to fetch weather data.")
+
+
 if __name__ == "__main__":
     app.run(debug=True)
