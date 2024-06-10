@@ -17,7 +17,7 @@ def index():
 
 @app.route('/weather')
 def fetch_weather():
-    api_key = 'YOUR_API_KEY_HERE'  # Replace with your actual API key
+    api_key = 'b9026ae26b75bc6c0785ec3d1be31b1d'  
     city = request.args.get('city')
     if not city:
         return jsonify({'error': 'City parameter is required'}), 400
